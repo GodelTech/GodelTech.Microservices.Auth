@@ -20,6 +20,9 @@ namespace Microsoft.AspNetCore.Builder
             this IServiceCollection services,
             Action<ClientCredentialsFlowTokenOptions, IConfiguration> configureOptions)
         {
+            // HttpClient
+            services.AddHttpClient();
+
             // Options
             services.AddOptions<ClientCredentialsFlowTokenOptions>()
                 .Configure(configureOptions);
